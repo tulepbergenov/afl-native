@@ -1,7 +1,5 @@
-import { Heading } from "@/components";
 import { ErrorBoundaryProps } from "expo-router";
 import { Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export const ErrorBoundary = ({ error, retry }: ErrorBoundaryProps) => {
   return (
@@ -14,10 +12,8 @@ export const ErrorBoundary = ({ error, retry }: ErrorBoundaryProps) => {
 
 export default () => {
   return (
-    <SafeAreaView>
-      <View>
-        <Heading>Home</Heading>
-      </View>
-    </SafeAreaView>
+    <View>
+      <Text>Page Not Found</Text>
+    </View>
   );
 };
