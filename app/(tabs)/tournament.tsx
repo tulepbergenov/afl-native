@@ -1,6 +1,6 @@
-import { BaseErrorBoundary, Heading } from "@/components";
+import { BaseErrorBoundary } from "@/components/BaseErrorBoundary";
 import { ErrorBoundaryProps } from "expo-router";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export const ErrorBoundary = (props: ErrorBoundaryProps) => {
@@ -11,7 +11,7 @@ export default () => {
   return (
     <SafeAreaView>
       <View>
-        <Heading>Settings</Heading>
+        <Text>Турнир</Text>
       </View>
     </SafeAreaView>
   );

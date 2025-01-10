@@ -1,2 +1,1 @@
 export * from "./BaseErrorBoundary";
-export * from "./Heading";

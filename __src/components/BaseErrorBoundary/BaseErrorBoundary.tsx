@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 export const BaseErrorBoundary = ({ error, retry }: ErrorBoundaryProps) => {
   return (
     <SafeAreaView>
-      <View style={{ flex: 1, backgroundColor: "red" }}>
+      <View style={{ flex: 1 }}>
         <Text>{error.message}</Text>
         <Text onPress={retry}>Try Again?</Text>
       </View>

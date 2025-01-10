@@ -11,7 +11,7 @@ export default () => {
   return (
     <SafeAreaView>
       <View>
-        <Text>Лента</Text>
+        <Text>Игры</Text>
       </View>
     </SafeAreaView>
   );
