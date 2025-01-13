@@ -1,14 +1,20 @@
+import { Container } from "@/shared/ui-kit";
 import { ErrorBoundaryProps } from "expo-router";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export const BaseErrorBoundary = ({ error, retry }: ErrorBoundaryProps) => {
   return (
     <SafeAreaView>
-      <View style={{ flex: 1 }}>
-        <Text>{error.message}</Text>
-        <Text onPress={retry}>Try Again?</Text>
-      </View>
+      <Container className="flex-auto flex justify-center items-center flex-col h-full">
+        <Text className="underline">{error.message}</Text>
+        <TouchableOpacity
+          className="underline inline-block mt-[12px] bg-black py-[8px] px-[16px] rounded"
+          onPress={retry}
+        >
+          <Text className="text-white">Try Again?</Text>
+        </TouchableOpacity>
+      </Container>
     </SafeAreaView>
   );
 };

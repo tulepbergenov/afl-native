@@ -1,4 +1,5 @@
 import { BaseErrorBoundary } from "@/components";
+import "@/shared/styles/index.css";
 import { ErrorBoundaryProps } from "expo-router";
 import { Stack } from "expo-router/stack";
 

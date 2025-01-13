@@ -1,6 +1,7 @@
 import { BaseErrorBoundary } from "@/components/BaseErrorBoundary";
+import { Container } from "@/shared/ui-kit";
 import { ErrorBoundaryProps } from "expo-router";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export const ErrorBoundary = (props: ErrorBoundaryProps) => {
@@ -10,9 +11,9 @@ export const ErrorBoundary = (props: ErrorBoundaryProps) => {
 export default () => {
   return (
     <SafeAreaView>
-      <View>
+      <Container>
         <Text>Профиль</Text>
-      </View>
+      </Container>
     </SafeAreaView>
   );
 };
