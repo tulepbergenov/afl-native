@@ -1,5 +1,6 @@
 import { fixupPluginRules } from "@eslint/compat";
 import pluginJs from "@eslint/js";
+import stylistic from "@stylistic/eslint-plugin";
 import importPlugin from "eslint-plugin-import";
 import perfectionist from "eslint-plugin-perfectionist";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
@@ -11,11 +12,20 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactHooksExtra from "eslint-plugin-react-hooks-extra";
 import reactNative from "eslint-plugin-react-native";
 import simpleImportSort from "eslint-plugin-simple-import-sort";
+import tailwind from "eslint-plugin-tailwindcss";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+  ...tailwind.configs["flat/recommended"],
+  stylistic.configs.customize({
+    indent: 2,
+    quotes: "double",
+    semi: true,
+    jsx: true,
+    commaDangle: true,
+  }),
   {
     ...importPlugin.flatConfigs.recommended,
     rules: {
@@ -38,6 +48,8 @@ export default [
     ...reactPlugin.configs.flat.recommended,
     rules: {
       "react/react-in-jsx-scope": "off",
+      "perfectionist/sort-imports": "error",
+      "@typescript-eslint/consistent-type-imports": "error",
     },
   },
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
