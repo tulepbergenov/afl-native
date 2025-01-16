@@ -1,6 +1,5 @@
 import { fixupPluginRules } from "@eslint/compat";
 import pluginJs from "@eslint/js";
-import stylistic from "@stylistic/eslint-plugin";
 import importPlugin from "eslint-plugin-import";
 import perfectionist from "eslint-plugin-perfectionist";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
@@ -19,13 +18,6 @@ import tseslint from "typescript-eslint";
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   ...tailwind.configs["flat/recommended"],
-  stylistic.configs.customize({
-    indent: 2,
-    quotes: "double",
-    semi: true,
-    jsx: true,
-    commaDangle: true,
-  }),
   {
     ...importPlugin.flatConfigs.recommended,
     rules: {
@@ -50,6 +42,12 @@ export default [
       "react/react-in-jsx-scope": "off",
       "perfectionist/sort-imports": "error",
       "@typescript-eslint/consistent-type-imports": "error",
+      "react-hooks/exhaustive-deps": "error",
+      indent: ["error", 2],
+      quotes: ["error", "double"],
+      semi: ["error", "always"],
+      "comma-dangle": ["error", "always-multiline"],
+      "react/jsx-indent": ["error", 2],
     },
   },
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
