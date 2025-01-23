@@ -1,7 +1,6 @@
 import { BaseErrorBoundary } from "@/components/BaseErrorBoundary";
-import { Container } from "@/shared/ui-kit";
+import { HeaderBar, SoonTournamentList } from "@/modules";
 import { ErrorBoundaryProps } from "expo-router";
-import { Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export const ErrorBoundary = (props: ErrorBoundaryProps) => {
@@ -10,10 +9,9 @@ export const ErrorBoundary = (props: ErrorBoundaryProps) => {
 
 export default () => {
   return (
-    <SafeAreaView>
-      <Container>
-        <Text>Лента</Text>
-      </Container>
+    <SafeAreaView className="bg-[#040404] h-full">
+      <HeaderBar />
+      <SoonTournamentList />
     </SafeAreaView>
   );
 };
