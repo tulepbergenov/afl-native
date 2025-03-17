@@ -1,17 +1,17 @@
+import { SafeAreaViewBackground } from "@/components";
 import { Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 const Profile = () => {
   return (
-    <SafeAreaView className="bg-[#0A090B] flex-auto">
+    <SafeAreaViewBackground>
       <View className="container">
         <View>
-          <Text className="text-white text-[18px] leading-[22px] font-normal">
+          <Text className="text-[18px] font-normal leading-[22px] text-white">
             Профиль
           </Text>
         </View>
       </View>
-    </SafeAreaView>
+    </SafeAreaViewBackground>
   );
 };
 

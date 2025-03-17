@@ -1,0 +1,15 @@
+node_modules
+build
+dist
+android
+ios
+.expo
+.expo-shared
+coverage
+*.log
+*.lock
+*.tmp
+*.cache
+.DS_Store
+.env
+.env.*
