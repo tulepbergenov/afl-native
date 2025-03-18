@@ -1,19 +1,35 @@
 import { Image } from "expo-image";
-import { ReactNode } from "react";
-import { Dimensions, ScrollView } from "react-native";
+import { useFocusEffect } from "expo-router";
+import { ReactNode, useCallback, useRef } from "react";
+import {
+  Dimensions,
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  TouchableWithoutFeedback,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-const { width, height } = Dimensions.get("window"); // Получаем размеры экрана
+const { width, height } = Dimensions.get("window");
 
 export const SafeAreaViewBackground = ({
   children,
 }: {
   children: ReactNode;
 }) => {
+  const scrollRef = useRef<ScrollView>(null);
+
+  useFocusEffect(
+    useCallback(() => {
+      scrollRef.current?.scrollTo({ y: 0, animated: true });
+    }, []),
+  );
+
   return (
     <SafeAreaView
       edges={["top", "left", "right"]}
-      className="relative flex-auto bg-[#0A090B]"
+      className="flex-1 bg-[#0A090B]"
     >
       <Image
         contentFit="cover"
@@ -27,14 +43,24 @@ export const SafeAreaViewBackground = ({
           zIndex: -1,
         }}
       />
-      <ScrollView
-        contentContainerStyle={{
-          paddingTop: 60,
-          paddingBottom: 32,
-        }}
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={{ flex: 1 }}
       >
-        {children}
-      </ScrollView>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+          <ScrollView
+            ref={scrollRef}
+            contentContainerStyle={{
+              flexGrow: 1,
+              paddingTop: 60,
+              paddingBottom: 32,
+            }}
+            keyboardShouldPersistTaps="handled"
+          >
+            {children}
+          </ScrollView>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
