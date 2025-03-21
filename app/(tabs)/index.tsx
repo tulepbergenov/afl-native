@@ -146,7 +146,7 @@ const Home = () => {
               style={{ width: (width - 46) / 2 }}
               className="overflow-hidden rounded-[8px] bg-[#0D1318]"
             >
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => router.push("/news/article")}>
                 <View className="h-[81px] w-full overflow-hidden">
                   <Image
                     source={require("../../assets/images/article.png")}

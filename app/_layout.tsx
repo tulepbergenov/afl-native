@@ -36,6 +36,14 @@ const Layout = () => {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
+        <Stack.Screen
+          name="tournaments-filter-modal"
+          options={{
+            headerShown: false,
+            presentation: "transparentModal",
+            animation: "slide_from_bottom",
+          }}
+        />
       </Stack>
       <StatusBar style="light" />
     </>

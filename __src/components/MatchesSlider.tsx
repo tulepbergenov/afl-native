@@ -48,7 +48,7 @@ export const MatchesSlider = (props: ViewProps) => {
         pagingEnabled
         data={MATCH_SLIDER_DATA}
         renderItem={({ item, index }) => (
-          <MatchItem item={item} index={index} />
+          <MatchItem item={item} index={index} key={index} />
         )}
         horizontal
         showsHorizontalScrollIndicator={false}

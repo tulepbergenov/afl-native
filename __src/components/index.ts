@@ -4,3 +4,4 @@ export * from "./HeaderRight";
 export * from "./MatchesSlider";
 export * from "./NewsSlider";
 export * from "./SafeAreaViewBackground";
+export * from "./TournamentCard";

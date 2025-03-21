@@ -81,7 +81,7 @@ export const NewsSlider = () => {
         pagingEnabled
         data={NEWS_SLIDER_DATA}
         renderItem={({ item, index }) => (
-          <SliderItem item={item} index={index} />
+          <SliderItem key={index} item={item} index={index} />
         )}
         horizontal
         keyExtractor={(_, index) => index.toString()}
