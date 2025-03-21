@@ -15,7 +15,7 @@ export const TournamentCard = ({
   style,
   ...props
 }: TournamentCardType) => {
-  const [isFavorites, setIsFavorites] = useState(false);
+  const [isFavorites, setIsFavorites] = useState(data.isFavorite ?? false);
 
   const handleToggleFavorites = () => {
     hapticImpact();

@@ -74,6 +74,7 @@ const TabLayout = () => {
       <Tabs.Screen
         name="profile"
         options={{
+          headerTitle: "",
           title: "Профиль",
           tabBarIcon: ({ color }) => <UserIcon size={24} color={color} />,
           tabBarIconStyle: { marginBottom: 3 },
@@ -91,6 +92,20 @@ const TabLayout = () => {
         options={{
           href: null,
           title: "Новости",
+        }}
+      />
+      <Tabs.Screen
+        name="tournaments-favorites"
+        options={{
+          href: null,
+          title: "Избранные турниры",
+        }}
+      />
+      <Tabs.Screen
+        name="my-commands"
+        options={{
+          href: null,
+          title: "Мои команды",
         }}
       />
     </Tabs>

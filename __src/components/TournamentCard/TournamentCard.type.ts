@@ -6,5 +6,6 @@ export type TournamentCardType = {
     date: string;
     title: string;
     commandCount: number;
+    isFavorite?: boolean;
   };
 } & ViewProps;
