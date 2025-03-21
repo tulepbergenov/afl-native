@@ -66,6 +66,7 @@ const TabLayout = () => {
       <Tabs.Screen
         name="matches"
         options={{
+          headerTitle: "",
           title: "Матчи",
           tabBarIcon: ({ color }) => <LifebuoyIcon size={24} color={color} />,
           tabBarIconStyle: { marginBottom: 3 },

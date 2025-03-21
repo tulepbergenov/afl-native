@@ -4,13 +4,17 @@ import { TouchableOpacity, View } from "react-native";
 import { ChevronLeftIcon } from "react-native-heroicons/solid";
 import LogoIcon from "../../assets/images/logo.svg";
 
-const ROUTES_FOR_HIDE_BACK_BUTTON = ["/", "/profile"];
+const ROUTES_FOR_HIDE_BACK_BUTTON = [
+  "/",
+  "/profile",
+  "/tournaments",
+  "/matches",
+  "/tournaments-filter-modal",
+];
 
 export const HeaderLeft = () => {
   const router = useRouter();
   const pathname = usePathname();
-
-  const isShowLogo = useMemo(() => pathname === "/", [pathname]);
 
   const isShowBackButton = useMemo(() => {
     if (ROUTES_FOR_HIDE_BACK_BUTTON.includes(pathname)) return false;
@@ -20,7 +24,7 @@ export const HeaderLeft = () => {
 
   return (
     <View className="pl-[16px]">
-      {isShowLogo && <LogoIcon width={93} height={36} />}
+      {!isShowBackButton && <LogoIcon width={93} height={36} />}
       {isShowBackButton && (
         <TouchableOpacity onPress={() => router.back()}>
           <View className="flex size-[36px] items-center justify-center rounded-[50%] bg-[#131B21]">
