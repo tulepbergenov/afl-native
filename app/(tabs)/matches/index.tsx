@@ -25,7 +25,7 @@ const Matches = () => {
               "border-b p-[12px] text-center font-Inter_600SemiBold text-[14px] font-semibold leading-none",
               {
                 ["border-b-[#09537B] text-[#09537B]"]: activeTab === "results",
-                ["border-b-white text-white"]: activeTab !== "results",
+                ["border-b-white/60 text-white/60"]: activeTab !== "results",
               },
             )}
           >
