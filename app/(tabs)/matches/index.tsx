@@ -1,12 +1,14 @@
 import { SafeAreaViewBackground } from "@/components";
 import { cn, hapticImpact } from "@/shared/libs";
 import { Image } from "expo-image";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { MagnifyingGlassIcon } from "react-native-heroicons/outline";
 
 const Matches = () => {
   const [activeTab, setActiveTab] = useState<"results" | "calendar">("results");
+  const router = useRouter();
 
   return (
     <SafeAreaViewBackground>
@@ -307,7 +309,12 @@ const Matches = () => {
                   </Text>
                 </View>
                 <View className="flex w-[40%] flex-col items-center justify-center">
-                  <TouchableOpacity className="flex flex-row items-center gap-x-[12px]">
+                  <TouchableOpacity
+                    onPress={() => {
+                      router.push("/(tabs)/matches/[match]");
+                    }}
+                    className="flex flex-row items-center gap-x-[12px]"
+                  >
                     <Text className="font-Inter_600SemiBold text-[28px] font-semibold leading-[34px] text-white/40">
                       0
                     </Text>

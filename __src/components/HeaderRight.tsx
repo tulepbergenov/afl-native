@@ -7,6 +7,9 @@ const ROUTES_WITH_HIDE_NOTIFICATION = [
   "/news",
   "/my-commands",
   "/create-command",
+  "/matches/[match]",
+  "/matches/[match]/application",
+  "/matches/[match]/[gamerNumber]",
 ];
 const ROUTES_WITH_SHOW_SETTINGS = ["/profile"];
 

@@ -123,6 +123,27 @@ const TabLayout = () => {
           title: "Создание команды",
         }}
       />
+      <Tabs.Screen
+        name="matches/[match]/index"
+        options={{
+          href: null,
+          title: "Подробности команды",
+        }}
+      />
+      <Tabs.Screen
+        name="matches/[match]/application"
+        options={{
+          href: null,
+          title: "Заявка на матч",
+        }}
+      />
+      <Tabs.Screen
+        name="matches/[match]/[gamerNumber]/index"
+        options={{
+          href: null,
+          title: "Номер игрока",
+        }}
+      />
     </Tabs>
   );
 };

@@ -1,5 +1,6 @@
 import { Image } from "expo-image";
 import { useFocusEffect } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import { ReactNode, useCallback, useRef } from "react";
 import {
   Dimensions,
@@ -61,6 +62,7 @@ export const SafeAreaViewBackground = ({
           </ScrollView>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
+      <StatusBar style="light" />
     </SafeAreaView>
   );
 };
