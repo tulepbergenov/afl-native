@@ -64,7 +64,7 @@ const TabLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="matches"
+        name="matches/index"
         options={{
           headerTitle: "",
           title: "Матчи",
@@ -114,6 +114,13 @@ const TabLayout = () => {
         options={{
           href: null,
           title: "Новости",
+        }}
+      />
+      <Tabs.Screen
+        name="create-command"
+        options={{
+          href: null,
+          title: "Создание команды",
         }}
       />
     </Tabs>

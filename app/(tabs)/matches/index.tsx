@@ -77,7 +77,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -107,7 +107,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -123,7 +123,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -153,7 +153,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -176,7 +176,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -206,7 +206,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -222,7 +222,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -252,7 +252,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -295,7 +295,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -307,7 +307,7 @@ const Matches = () => {
                   </Text>
                 </View>
                 <View className="flex w-[40%] flex-col items-center justify-center">
-                  <View className="flex flex-row items-center gap-x-[12px]">
+                  <TouchableOpacity className="flex flex-row items-center gap-x-[12px]">
                     <Text className="font-Inter_600SemiBold text-[28px] font-semibold leading-[34px] text-white/40">
                       0
                     </Text>
@@ -317,12 +317,12 @@ const Matches = () => {
                     <Text className="font-Inter_600SemiBold text-[28px] font-semibold leading-[34px] text-[#09537B]">
                       0
                     </Text>
-                  </View>
+                  </TouchableOpacity>
                 </View>
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -338,7 +338,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -350,7 +350,7 @@ const Matches = () => {
                   </Text>
                 </View>
                 <View className="flex w-[40%] flex-col items-center justify-center">
-                  <View className="flex flex-row items-center gap-x-[12px]">
+                  <TouchableOpacity className="flex flex-row items-center gap-x-[12px]">
                     <Text className="font-Inter_600SemiBold text-[28px] font-semibold leading-[34px] text-white/40">
                       0
                     </Text>
@@ -360,12 +360,12 @@ const Matches = () => {
                     <Text className="font-Inter_600SemiBold text-[28px] font-semibold leading-[34px] text-[#09537B]">
                       0
                     </Text>
-                  </View>
+                  </TouchableOpacity>
                 </View>
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -388,7 +388,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -400,7 +400,7 @@ const Matches = () => {
                   </Text>
                 </View>
                 <View className="flex w-[40%] flex-col items-center justify-center">
-                  <View className="flex flex-row items-center gap-x-[12px]">
+                  <TouchableOpacity className="flex flex-row items-center gap-x-[12px]">
                     <Text className="font-Inter_600SemiBold text-[28px] font-semibold leading-[34px] text-white/40">
                       0
                     </Text>
@@ -410,12 +410,12 @@ const Matches = () => {
                     <Text className="font-Inter_600SemiBold text-[28px] font-semibold leading-[34px] text-[#09537B]">
                       0
                     </Text>
-                  </View>
+                  </TouchableOpacity>
                 </View>
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -431,7 +431,7 @@ const Matches = () => {
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",
@@ -443,7 +443,7 @@ const Matches = () => {
                   </Text>
                 </View>
                 <View className="flex w-[40%] flex-col items-center justify-center">
-                  <View className="flex flex-row items-center gap-x-[12px]">
+                  <TouchableOpacity className="flex flex-row items-center gap-x-[12px]">
                     <Text className="font-Inter_600SemiBold text-[28px] font-semibold leading-[34px] text-white/40">
                       0
                     </Text>
@@ -453,12 +453,12 @@ const Matches = () => {
                     <Text className="font-Inter_600SemiBold text-[28px] font-semibold leading-[34px] text-[#09537B]">
                       0
                     </Text>
-                  </View>
+                  </TouchableOpacity>
                 </View>
                 <View className="flex w-[30%] flex-col items-center justify-center">
                   <View className="size-[48px] overflow-hidden rounded-full">
                     <Image
-                      source={require("../../assets/images/article.png")}
+                      source={require("../../../assets/images/article.png")}
                       style={{
                         width: "100%",
                         height: "100%",

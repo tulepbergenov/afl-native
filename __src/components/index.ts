@@ -1,3 +1,4 @@
+export * from "./Checkbox";
 export * from "./HapticTab";
 export * from "./HeaderLeft";
 export * from "./HeaderRight";

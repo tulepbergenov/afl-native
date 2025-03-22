@@ -3,7 +3,11 @@ import { useMemo } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { BellIcon, Cog6ToothIcon } from "react-native-heroicons/outline";
 
-const ROUTES_WITH_HIDE_NOTIFICATION = ["/news"];
+const ROUTES_WITH_HIDE_NOTIFICATION = [
+  "/news",
+  "/my-commands",
+  "/create-command",
+];
 const ROUTES_WITH_SHOW_SETTINGS = ["/profile"];
 
 export const HeaderRight = () => {
