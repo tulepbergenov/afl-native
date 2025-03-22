@@ -111,7 +111,7 @@ const SliderItem = ({
   const router = useRouter();
 
   return (
-    <TouchableOpacity onPress={() => router.push("/(tabs)/news/article")}>
+    <TouchableOpacity onPress={() => router.push("/(tabs)/news/match-article")}>
       <View
         style={{
           width: width - 32,

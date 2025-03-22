@@ -44,6 +44,11 @@ const MATCH_SLIDER_DATA: {
 export const MatchesSlider = (props: ViewProps) => {
   return (
     <View {...props}>
+      <View className="container">
+        <Text className="font-Inter_600SemiBold text-[18px] font-semibold leading-[22px] text-white">
+          Сейчас
+        </Text>
+      </View>
       <FlatList
         pagingEnabled
         data={MATCH_SLIDER_DATA}
@@ -53,6 +58,7 @@ export const MatchesSlider = (props: ViewProps) => {
         horizontal
         showsHorizontalScrollIndicator={false}
         viewabilityConfig={{ viewAreaCoveragePercentThreshold: 50 }}
+        className="mt-[16px]"
       />
     </View>
   );

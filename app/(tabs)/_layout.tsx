@@ -109,6 +109,13 @@ const TabLayout = () => {
           title: "Мои команды",
         }}
       />
+      <Tabs.Screen
+        name="news/match-article"
+        options={{
+          href: null,
+          title: "Новости",
+        }}
+      />
     </Tabs>
   );
 };
