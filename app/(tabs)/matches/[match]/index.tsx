@@ -8,9 +8,11 @@ import {
   Dimensions,
   ScrollView,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
+import { MagnifyingGlassIcon } from "react-native-heroicons/solid";
 
 const { width, height } = Dimensions.get("window");
 
@@ -228,6 +230,130 @@ const Match = () => {
               <Text className="font-Inter_600SemiBold text-[14px] font-semibold leading-[17px] text-white">
                 СК Алатау
               </Text>
+            </View>
+          </View>
+        )}
+        {activeTab === "composition" && (
+          <View className="container mt-[24px]">
+            <View className="relative mt-[16px] w-full overflow-hidden rounded-[8px] bg-[#131B21]">
+              <MagnifyingGlassIcon
+                size={24}
+                color="#fff"
+                style={{
+                  position: "absolute",
+                  top: 8,
+                  left: 8,
+                }}
+              />
+              <TextInput
+                placeholder="Поиск по тексту"
+                placeholderTextColor="rgba(255, 255, 255, 0.5)"
+                className="h-[40px] pl-[36px] pr-[8px] font-Inter_400Regular text-[16px] font-normal leading-[19px] text-white"
+              />
+            </View>
+            <View className="mt-[24px] flex flex-col gap-y-[32px]">
+              <View className="flex flex-row items-center justify-between">
+                <View className="flex flex-row items-center gap-x-[8px]">
+                  <View className="flex size-[24px] items-center justify-center overflow-hidden rounded-full">
+                    <Image
+                      contentFit="cover"
+                      source={require("../../../../assets/images/avatar.png")}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </View>
+                  <Text className="font-Inter_600SemiBold text-[18px] font-semibold leading-[22px] text-white">
+                    Myrar Samiitov
+                  </Text>
+                </View>
+              </View>
+              <View className="flex flex-row items-center justify-between">
+                <View className="flex flex-row items-center gap-x-[8px]">
+                  <View className="flex size-[24px] items-center justify-center overflow-hidden rounded-full">
+                    <Image
+                      contentFit="cover"
+                      source={require("../../../../assets/images/avatar.png")}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </View>
+                  <Text className="font-Inter_600SemiBold text-[18px] font-semibold leading-[22px] text-white">
+                    Myrar Samiitov
+                  </Text>
+                </View>
+              </View>
+              <View className="flex flex-row items-center justify-between">
+                <View className="flex flex-row items-center gap-x-[8px]">
+                  <View className="flex size-[24px] items-center justify-center overflow-hidden rounded-full">
+                    <Image
+                      contentFit="cover"
+                      source={require("../../../../assets/images/avatar.png")}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </View>
+                  <Text className="font-Inter_600SemiBold text-[18px] font-semibold leading-[22px] text-white">
+                    Myrar Samiitov
+                  </Text>
+                </View>
+              </View>
+              <View className="flex flex-row items-center justify-between">
+                <View className="flex flex-row items-center gap-x-[8px]">
+                  <View className="flex size-[24px] items-center justify-center overflow-hidden rounded-full">
+                    <Image
+                      contentFit="cover"
+                      source={require("../../../../assets/images/avatar.png")}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </View>
+                  <Text className="font-Inter_600SemiBold text-[18px] font-semibold leading-[22px] text-white">
+                    Myrar Samiitov
+                  </Text>
+                </View>
+              </View>
+              <View className="flex flex-row items-center justify-between">
+                <View className="flex flex-row items-center gap-x-[8px]">
+                  <View className="flex size-[24px] items-center justify-center overflow-hidden rounded-full">
+                    <Image
+                      contentFit="cover"
+                      source={require("../../../../assets/images/avatar.png")}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </View>
+                  <Text className="font-Inter_600SemiBold text-[18px] font-semibold leading-[22px] text-white">
+                    Myrar Samiitov
+                  </Text>
+                </View>
+              </View>
+              <View className="flex flex-row items-center justify-between">
+                <View className="flex flex-row items-center gap-x-[8px]">
+                  <View className="flex size-[24px] items-center justify-center overflow-hidden rounded-full">
+                    <Image
+                      contentFit="cover"
+                      source={require("../../../../assets/images/avatar.png")}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    />
+                  </View>
+                  <Text className="font-Inter_600SemiBold text-[18px] font-semibold leading-[22px] text-white">
+                    Myrar Samiitov
+                  </Text>
+                </View>
+              </View>
             </View>
           </View>
         )}
