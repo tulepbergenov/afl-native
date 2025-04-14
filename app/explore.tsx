@@ -1,6 +1,11 @@
-import { Link, Stack } from "expo-router";
+import { ErrorBoundaryScreen } from "@/components";
+import { ErrorBoundaryProps, Link, Stack } from "expo-router";
 import { Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+export const ErrorBoundary = (props: ErrorBoundaryProps) => (
+  <ErrorBoundaryScreen {...props} />
+);
 
 const ExploreScreen = () => {
   const { top } = useSafeAreaInsets();
