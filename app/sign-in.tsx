@@ -2,6 +2,7 @@ import { Button, Container } from "@/components/ui";
 import { valibotResolver } from "@hookform/resolvers/valibot";
 import { Image } from "expo-image";
 import { Link } from "expo-router";
+import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import {
   KeyboardAvoidingView,
@@ -9,7 +10,10 @@ import {
   ScrollView,
   Text,
   TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
+import { EyeIcon, EyeSlashIcon } from "react-native-heroicons/outline";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import * as v from "valibot";
 
@@ -29,6 +33,8 @@ const schema = v.object({
 
 const SignInScreen = () => {
   const { top, bottom } = useSafeAreaInsets();
+
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const { control, handleSubmit } = useForm<{
     number: string;
@@ -126,7 +132,20 @@ const SignInScreen = () => {
                     height: 40,
                   }}
                 />
-                {error && <Text style={{ color: "red" }}>{error.message}</Text>}
+                {error && (
+                  <Text
+                    style={{
+                      color: "red",
+                      marginTop: 8,
+                      fontSize: 16,
+                      lineHeight: 16,
+                      fontFamily: "Inter_400Regular",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {error.message}
+                  </Text>
+                )}
               </>
             )}
           />
@@ -151,30 +170,72 @@ const SignInScreen = () => {
               fieldState: { error },
             }) => (
               <>
-                <TextInput
-                  placeholder="Введите пароль"
-                  placeholderTextColor="rgba(255, 255, 255, 0.5)"
-                  secureTextEntry
-                  value={value}
-                  textContentType="password"
-                  autoComplete="password"
-                  importantForAutofill="yes"
-                  onChangeText={onChange}
-                  onBlur={onBlur}
+                <View
                   style={{
-                    backgroundColor: "#131B21",
-                    borderRadius: 8,
-                    marginTop: 8,
-                    paddingHorizontal: 13,
-                    color: "#fff",
-                    fontSize: 16,
-                    lineHeight: 19,
-                    fontFamily: "Inter_400Regular",
-                    fontWeight: 400,
-                    height: 40,
+                    position: "relative",
                   }}
-                />
-                {error && <Text style={{ color: "red" }}>{error.message}</Text>}
+                >
+                  <TextInput
+                    placeholder="Введите пароль"
+                    placeholderTextColor="rgba(255, 255, 255, 0.5)"
+                    secureTextEntry={!isPasswordVisible}
+                    value={value}
+                    textContentType="password"
+                    autoComplete="password"
+                    importantForAutofill="yes"
+                    onChangeText={onChange}
+                    onBlur={onBlur}
+                    style={{
+                      backgroundColor: "#131B21",
+                      borderRadius: 8,
+                      marginTop: 8,
+                      paddingLeft: 13,
+                      paddingRight: 46,
+                      color: "#fff",
+                      fontSize: 16,
+                      lineHeight: 19,
+                      fontFamily: "Inter_400Regular",
+                      fontWeight: 400,
+                      height: 40,
+                    }}
+                  />
+                  <TouchableOpacity
+                    style={{
+                      position: "absolute",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexDirection: "row",
+                      width: 40,
+                      height: 40,
+                      right: 3,
+                      top: 8,
+                      zIndex: 1,
+                    }}
+                    activeOpacity={0.6}
+                    onPress={() => setIsPasswordVisible(!isPasswordVisible)}
+                  >
+                    {isPasswordVisible ? (
+                      <EyeSlashIcon size={20} color={"#FFFFFF"} opacity={0.5} />
+                    ) : (
+                      <EyeIcon size={20} color={"#FFFFFF"} opacity={0.5} />
+                    )}
+                  </TouchableOpacity>
+                </View>
+                {error && (
+                  <Text
+                    style={{
+                      color: "red",
+                      marginTop: 8,
+                      fontSize: 16,
+                      lineHeight: 16,
+                      fontFamily: "Inter_400Regular",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {error.message}
+                  </Text>
+                )}
               </>
             )}
           />
