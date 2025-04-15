@@ -32,7 +32,7 @@ const HomeScreen = () => {
           Home
         </Text>
         <Link
-          href="/explore"
+          href="/sign-in"
           style={{
             color: "#fff",
             fontFamily: "Inter_400Regular",
@@ -40,7 +40,7 @@ const HomeScreen = () => {
             lineHeight: 21,
           }}
         >
-          About
+          Sign In
         </Link>
       </View>
     </>
