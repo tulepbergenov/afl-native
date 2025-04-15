@@ -141,6 +141,7 @@ const SignInScreen = () => {
                       lineHeight: 16,
                       fontFamily: "Inter_400Regular",
                       fontWeight: 400,
+                      opacity: 0.8,
                     }}
                   >
                     {error.message}
@@ -231,6 +232,7 @@ const SignInScreen = () => {
                       lineHeight: 16,
                       fontFamily: "Inter_400Regular",
                       fontWeight: 400,
+                      opacity: 0.8,
                     }}
                   >
                     {error.message}
