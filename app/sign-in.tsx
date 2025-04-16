@@ -1,7 +1,8 @@
+import { ErrorBoundaryScreen } from "@/components";
 import { Button, Container } from "@/components/ui";
 import { valibotResolver } from "@hookform/resolvers/valibot";
 import { Image } from "expo-image";
-import { Link } from "expo-router";
+import { ErrorBoundaryProps, Link } from "expo-router";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import {
@@ -30,6 +31,10 @@ const schema = v.object({
     v.regex(/^.{8,}$/, "Пароль должен быть не менее 8 символов"),
   ),
 });
+
+export const ErrorBoundary = (props: ErrorBoundaryProps) => (
+  <ErrorBoundaryScreen {...props} />
+);
 
 const SignInScreen = () => {
   const { top, bottom } = useSafeAreaInsets();
