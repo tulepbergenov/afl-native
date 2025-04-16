@@ -30,9 +30,7 @@ const RootLayout = () => {
     }
   }, [loaded]);
 
-  if (!loaded) {
-    return null;
-  }
+  if (!loaded) return null;
 
   return (
     <>
