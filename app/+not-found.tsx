@@ -1,5 +1,5 @@
 import { ErrorBoundaryScreen } from "@/components";
-import { ErrorBoundaryProps, Link, Stack } from "expo-router";
+import { ErrorBoundaryProps, Link } from "expo-router";
 import { View } from "react-native";
 
 export const ErrorBoundary = (props: ErrorBoundaryProps) => (
@@ -8,25 +8,22 @@ export const ErrorBoundary = (props: ErrorBoundaryProps) => (
 
 const NotFoundScreen = () => {
   return (
-    <>
-      <Stack.Screen options={{ headerShown: false }} />
-      <View
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Link
+        href="/"
         style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
+          color: "#fff",
         }}
       >
-        <Link
-          href="/"
-          style={{
-            color: "#fff",
-          }}
-        >
-          Go to home screen!
-        </Link>
-      </View>
-    </>
+        Go to home screen!
+      </Link>
+    </View>
   );
 };
 

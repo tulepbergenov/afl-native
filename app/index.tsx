@@ -1,5 +1,5 @@
 import { ErrorBoundaryScreen } from "@/components";
-import { ErrorBoundaryProps, Link, Stack } from "expo-router";
+import { ErrorBoundaryProps, Link } from "expo-router";
 import { Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -11,39 +11,45 @@ const HomeScreen = () => {
   const { top } = useSafeAreaInsets();
 
   return (
-    <>
-      <Stack.Screen options={{ headerShown: false }} />
-      <View
+    <View
+      style={{
+        paddingTop: top,
+        paddingInline: 16,
+      }}
+    >
+      <Text
         style={{
-          backgroundColor: "#000",
-          flex: 1,
-          paddingTop: top,
-          paddingInline: 16,
+          color: "#fff",
+          fontFamily: "Inter_400Regular",
+          fontSize: 16,
+          lineHeight: 21,
         }}
       >
-        <Text
-          style={{
-            color: "#fff",
-            fontFamily: "Inter_400Regular",
-            fontSize: 16,
-            lineHeight: 21,
-          }}
-        >
-          Home
-        </Text>
-        <Link
-          href="/sign-in"
-          style={{
-            color: "#fff",
-            fontFamily: "Inter_400Regular",
-            fontSize: 16,
-            lineHeight: 21,
-          }}
-        >
-          Sign In
-        </Link>
-      </View>
-    </>
+        Home
+      </Text>
+      <Link
+        href="/sign-in"
+        style={{
+          color: "#fff",
+          fontFamily: "Inter_400Regular",
+          fontSize: 16,
+          lineHeight: 21,
+        }}
+      >
+        Sign In
+      </Link>
+      <Link
+        href="/news/123"
+        style={{
+          color: "#fff",
+          fontFamily: "Inter_400Regular",
+          fontSize: 16,
+          lineHeight: 21,
+        }}
+      >
+        News
+      </Link>
+    </View>
   );
 };
 

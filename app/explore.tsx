@@ -1,5 +1,5 @@
 import { ErrorBoundaryScreen } from "@/components";
-import { ErrorBoundaryProps, Link, Stack } from "expo-router";
+import { ErrorBoundaryProps, Link } from "expo-router";
 import { Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -11,39 +11,36 @@ const ExploreScreen = () => {
   const { top } = useSafeAreaInsets();
 
   return (
-    <>
-      <Stack.Screen options={{ headerShown: false }} />
-      <View
+    <View
+      style={{
+        backgroundColor: "#000",
+        flex: 1,
+        paddingTop: top,
+        paddingInline: 16,
+      }}
+    >
+      <Text
         style={{
-          backgroundColor: "#000",
-          flex: 1,
-          paddingTop: top,
-          paddingInline: 16,
+          color: "#fff",
+          fontFamily: "Inter_400Regular",
+          fontSize: 16,
+          lineHeight: 21,
         }}
       >
-        <Text
-          style={{
-            color: "#fff",
-            fontFamily: "Inter_400Regular",
-            fontSize: 16,
-            lineHeight: 21,
-          }}
-        >
-          Explore
-        </Text>
-        <Link
-          href="/"
-          style={{
-            color: "#fff",
-            fontFamily: "Inter_400Regular",
-            fontSize: 16,
-            lineHeight: 21,
-          }}
-        >
-          Home
-        </Link>
-      </View>
-    </>
+        Explore
+      </Text>
+      <Link
+        href="/"
+        style={{
+          color: "#fff",
+          fontFamily: "Inter_400Regular",
+          fontSize: 16,
+          lineHeight: 21,
+        }}
+      >
+        Home
+      </Link>
+    </View>
   );
 };
 
