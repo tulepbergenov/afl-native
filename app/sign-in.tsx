@@ -70,133 +70,66 @@ const SignInScreen = () => {
         }}
       >
         <Container>
-          <Image
-            source={require("../assets/images/logo-big.webp")}
-            contentFit="contain"
-            contentPosition="center"
-            style={{
-              width: "100%",
-              height: 100,
-              marginTop: 16,
-            }}
-          />
-          <Text
-            style={{
-              textAlign: "center",
-              fontSize: 24,
-              fontWeight: 600,
-              marginTop: 58,
-              color: "#fff",
-              lineHeight: 24,
-              fontFamily: "Inter_600SemiBold",
-            }}
-          >
-            Добро пожаловать в AFL!
-          </Text>
-          <Text
-            style={{
-              marginTop: 16,
-              color: "#fff",
-              fontSize: 16,
-              lineHeight: 23,
-              fontFamily: "Inter_400Regular",
-              fontWeight: 400,
-              opacity: 0.5,
-            }}
-          >
-            Номер телефона
-          </Text>
-          <Controller
-            control={control}
-            name="number"
-            render={({
-              field: { onChange, onBlur, value },
-              fieldState: { error },
-            }) => (
-              <>
-                <TextInput
-                  placeholder="+7..."
-                  placeholderTextColor="rgba(255, 255, 255, 0.5)"
-                  keyboardType="phone-pad"
-                  value={value}
-                  onChangeText={onChange}
-                  onBlur={onBlur}
-                  autoComplete="tel"
-                  importantForAutofill="yes"
-                  textContentType="telephoneNumber"
-                  style={{
-                    backgroundColor: "#131B21",
-                    borderRadius: 8,
-                    marginTop: 8,
-                    paddingHorizontal: 13,
-                    color: "#fff",
-                    fontSize: 16,
-                    lineHeight: 19,
-                    fontFamily: "Inter_400Regular",
-                    fontWeight: 400,
-                    height: 40,
-                  }}
-                />
-                {error && (
-                  <Text
-                    style={{
-                      color: "red",
-                      marginTop: 8,
-                      fontSize: 16,
-                      lineHeight: 16,
-                      fontFamily: "Inter_400Regular",
-                      fontWeight: 400,
-                      opacity: 0.8,
-                    }}
-                  >
-                    {error.message}
-                  </Text>
-                )}
-              </>
-            )}
-          />
-          <Text
-            style={{
-              marginTop: 16,
-              color: "#fff",
-              fontSize: 16,
-              lineHeight: 23,
-              fontFamily: "Inter_400Regular",
-              fontWeight: 400,
-              opacity: 0.5,
-            }}
-          >
-            Пароль
-          </Text>
-          <Controller
-            control={control}
-            name="password"
-            render={({
-              field: { onChange, onBlur, value },
-              fieldState: { error },
-            }) => (
-              <>
-                <View
-                  style={{
-                    position: "relative",
-                  }}
-                >
+          <View>
+            <Image
+              source={require("../assets/images/logo-big.webp")}
+              contentFit="contain"
+              contentPosition="center"
+              style={{
+                width: "100%",
+                height: 100,
+                marginTop: 16,
+              }}
+            />
+            <Text
+              style={{
+                textAlign: "center",
+                fontSize: 24,
+                fontWeight: 600,
+                marginTop: 58,
+                color: "#fff",
+                lineHeight: 24,
+                fontFamily: "Inter_600SemiBold",
+              }}
+            >
+              Добро пожаловать в AFL!
+            </Text>
+            <Text
+              style={{
+                marginTop: 16,
+                color: "#fff",
+                fontSize: 16,
+                lineHeight: 23,
+                fontFamily: "Inter_400Regular",
+                fontWeight: 400,
+                opacity: 0.5,
+              }}
+            >
+              Номер телефона
+            </Text>
+            <Controller
+              control={control}
+              name="number"
+              render={({
+                field: { onChange, onBlur, value },
+                fieldState: { error },
+              }) => (
+                <>
                   <TextInput
-                    placeholder="Введите пароль"
+                    placeholder="+7..."
                     placeholderTextColor="rgba(255, 255, 255, 0.5)"
-                    secureTextEntry={!isPasswordVisible}
+                    keyboardType="phone-pad"
                     value={value}
-                    textContentType="password"
-                    autoComplete="password"
-                    importantForAutofill="yes"
                     onChangeText={onChange}
                     onBlur={onBlur}
+                    autoComplete="tel"
+                    importantForAutofill="yes"
+                    textContentType="telephoneNumber"
                     style={{
                       backgroundColor: "#131B21",
                       borderRadius: 8,
                       marginTop: 8,
-                      paddingLeft: 13,
-                      paddingRight: 46,
+                      paddingHorizontal: 13,
                       color: "#fff",
                       fontSize: 16,
                       lineHeight: 19,
@@ -205,76 +138,149 @@ const SignInScreen = () => {
                       height: 40,
                     }}
                   />
-                  <TouchableOpacity
+                  {error && (
+                    <Text
+                      style={{
+                        color: "red",
+                        marginTop: 8,
+                        fontSize: 16,
+                        lineHeight: 16,
+                        fontFamily: "Inter_400Regular",
+                        fontWeight: 400,
+                        opacity: 0.8,
+                      }}
+                    >
+                      {error.message}
+                    </Text>
+                  )}
+                </>
+              )}
+            />
+            <Text
+              style={{
+                marginTop: 16,
+                color: "#fff",
+                fontSize: 16,
+                lineHeight: 23,
+                fontFamily: "Inter_400Regular",
+                fontWeight: 400,
+                opacity: 0.5,
+              }}
+            >
+              Пароль
+            </Text>
+            <Controller
+              control={control}
+              name="password"
+              render={({
+                field: { onChange, onBlur, value },
+                fieldState: { error },
+              }) => (
+                <>
+                  <View
                     style={{
-                      position: "absolute",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexDirection: "row",
-                      width: 40,
-                      height: 40,
-                      right: 3,
-                      top: 8,
-                      zIndex: 1,
-                    }}
-                    activeOpacity={0.6}
-                    onPress={() => setIsPasswordVisible(!isPasswordVisible)}
-                  >
-                    {isPasswordVisible ? (
-                      <EyeSlashIcon size={20} color={"#FFFFFF"} opacity={0.5} />
-                    ) : (
-                      <EyeIcon size={20} color={"#FFFFFF"} opacity={0.5} />
-                    )}
-                  </TouchableOpacity>
-                </View>
-                {error && (
-                  <Text
-                    style={{
-                      color: "red",
-                      marginTop: 8,
-                      fontSize: 16,
-                      lineHeight: 16,
-                      fontFamily: "Inter_400Regular",
-                      fontWeight: 400,
-                      opacity: 0.8,
+                      position: "relative",
                     }}
                   >
-                    {error.message}
-                  </Text>
-                )}
-              </>
-            )}
-          />
-          <Link
-            href="/recovery-password"
-            style={{
-              marginTop: 16,
-              color: "#09537B",
-              fontSize: 16,
-              lineHeight: 23,
-              fontFamily: "Inter_400Regular",
-              fontWeight: 400,
-            }}
-          >
-            Забыл пароль
-          </Link>
-          <Button
-            style={{
-              marginTop: 32,
-            }}
-            onPress={handleSignIn}
-          >
-            Войти
-          </Button>
-          <Button
-            style={{
-              marginTop: 16,
-            }}
-            type="secondary"
-          >
-            Создать аккаунт
-          </Button>
+                    <TextInput
+                      placeholder="Введите пароль"
+                      placeholderTextColor="rgba(255, 255, 255, 0.5)"
+                      secureTextEntry={!isPasswordVisible}
+                      value={value}
+                      textContentType="password"
+                      autoComplete="password"
+                      importantForAutofill="yes"
+                      onChangeText={onChange}
+                      onBlur={onBlur}
+                      style={{
+                        backgroundColor: "#131B21",
+                        borderRadius: 8,
+                        marginTop: 8,
+                        paddingLeft: 13,
+                        paddingRight: 46,
+                        color: "#fff",
+                        fontSize: 16,
+                        lineHeight: 19,
+                        fontFamily: "Inter_400Regular",
+                        fontWeight: 400,
+                        height: 40,
+                      }}
+                    />
+                    <TouchableOpacity
+                      style={{
+                        position: "absolute",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexDirection: "row",
+                        width: 40,
+                        height: 40,
+                        right: 3,
+                        top: 8,
+                        zIndex: 1,
+                      }}
+                      activeOpacity={0.6}
+                      onPress={() => setIsPasswordVisible(!isPasswordVisible)}
+                    >
+                      {isPasswordVisible ? (
+                        <EyeSlashIcon
+                          size={20}
+                          color={"#FFFFFF"}
+                          opacity={0.5}
+                        />
+                      ) : (
+                        <EyeIcon size={20} color={"#FFFFFF"} opacity={0.5} />
+                      )}
+                    </TouchableOpacity>
+                  </View>
+                  {error && (
+                    <Text
+                      style={{
+                        color: "red",
+                        marginTop: 8,
+                        fontSize: 16,
+                        lineHeight: 16,
+                        fontFamily: "Inter_400Regular",
+                        fontWeight: 400,
+                        opacity: 0.8,
+                      }}
+                    >
+                      {error.message}
+                    </Text>
+                  )}
+                </>
+              )}
+            />
+            <Link
+              href="/recovery-password"
+              style={{
+                marginTop: 16,
+                color: "#09537B",
+                fontSize: 16,
+                lineHeight: 23,
+                fontFamily: "Inter_400Regular",
+                fontWeight: 400,
+              }}
+            >
+              Забыл пароль
+            </Link>
+            <Button
+              style={{
+                marginTop: 32,
+              }}
+              onPress={handleSignIn}
+            >
+              Войти
+            </Button>
+            <Button
+              style={{
+                marginTop: 16,
+              }}
+              type="secondary"
+            >
+              Создать аккаунт
+            </Button>
+          </View>
         </Container>
       </ScrollView>
     </KeyboardAvoidingView>
