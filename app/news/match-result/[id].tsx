@@ -16,6 +16,7 @@ const ArticleScreen = () => {
           paddingBottom: bottom,
         }}
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ flexGrow: 1 }}
       >
         <Container>
           <View>
