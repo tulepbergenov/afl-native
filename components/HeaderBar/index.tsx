@@ -41,26 +41,24 @@ export const HeaderBar = ({
             justifyContent: "space-between",
           }}
         >
-          {!children && (
-            <TouchableOpacity
-              onPress={() => router.back()}
-              activeOpacity={0.6}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: 36,
-                height: 36,
-                borderRadius: "100%",
-                backgroundColor: "#131B21",
-              }}
-            >
-              <ChevronLeftIcon color="#fff" size={24} />
-            </TouchableOpacity>
-          )}
           {children}
           {!children && (
             <>
+              <TouchableOpacity
+                onPress={() => router.back()}
+                activeOpacity={0.6}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 36,
+                  height: 36,
+                  borderRadius: "100%",
+                  backgroundColor: "#131B21",
+                }}
+              >
+                <ChevronLeftIcon color="#fff" size={24} />
+              </TouchableOpacity>
               <Text
                 style={{
                   color: "#fff",
