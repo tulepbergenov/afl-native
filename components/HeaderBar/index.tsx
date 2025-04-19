@@ -1,9 +1,9 @@
 import { useRouter } from "expo-router";
 import { ReactNode } from "react";
-import { Dimensions, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, Text, View } from "react-native";
 import { ChevronLeftIcon } from "react-native-heroicons/outline";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Container } from "../ui";
+import { Container, IconButton } from "../ui";
 
 const { width } = Dimensions.get("window");
 
@@ -44,21 +44,9 @@ export const HeaderBar = ({
           {children}
           {!children && (
             <>
-              <TouchableOpacity
-                onPress={() => router.back()}
-                activeOpacity={0.6}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: 36,
-                  height: 36,
-                  borderRadius: "100%",
-                  backgroundColor: "#131B21",
-                }}
-              >
+              <IconButton onPress={() => router.back()}>
                 <ChevronLeftIcon color="#fff" size={24} />
-              </TouchableOpacity>
+              </IconButton>
               <Text
                 style={{
                   color: "#fff",
