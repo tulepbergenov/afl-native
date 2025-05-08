@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
+    width: "100%",
   },
   primaryButton: {
     backgroundColor: "#09537B",
