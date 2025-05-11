@@ -2,7 +2,7 @@ import { ErrorBoundaryScreen } from "@/components";
 import { Button, Container } from "@/components/ui";
 import { valibotResolver } from "@hookform/resolvers/valibot";
 import { Image } from "expo-image";
-import { ErrorBoundaryProps, Link } from "expo-router";
+import { ErrorBoundaryProps, Link, useRouter } from "expo-router";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import {
@@ -51,6 +51,8 @@ const SignInScreen = () => {
   const handleSignIn = handleSubmit((data) => {
     console.log(data);
   });
+
+  const router = useRouter();
 
   return (
     <KeyboardAvoidingView
@@ -277,6 +279,7 @@ const SignInScreen = () => {
                 marginTop: 16,
               }}
               type="secondary"
+              onPress={() => router.push("/sign-up")}
             >
               Создать аккаунт
             </Button>

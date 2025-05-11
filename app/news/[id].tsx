@@ -16,6 +16,7 @@ const ArticleScreen = () => {
           paddingBottom: bottom,
         }}
         showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
         contentContainerStyle={{ flexGrow: 1 }}
       >
         <Container>
