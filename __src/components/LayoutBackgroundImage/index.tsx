@@ -19,7 +19,7 @@ export const LayoutBackgroundImage = ({
     >
       <Image
         contentFit="cover"
-        source={require("../../assets/images/bg.webp")}
+        source={require("../../../assets/images/bg.webp")}
         style={{
           position: "absolute",
           top: 0,
