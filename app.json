@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "afl-native",
-    "slug": "afl-native",
+    "name": "afl",
+    "slug": "afl",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "afl",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "ios": {
