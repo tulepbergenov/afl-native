@@ -36,12 +36,8 @@ const SignUpScreen = () => {
           }}
         >
           <Container>
-            <View
-              style={{
-                backgroundColor: "red",
-              }}
-            >
-              <Text>Sign Up</Text>
+            <View className="bg-blue-400">
+              <Text className="text-[20px]">Sign Up</Text>
             </View>
           </Container>
         </ScrollView>
