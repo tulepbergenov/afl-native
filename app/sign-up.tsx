@@ -1,4 +1,8 @@
-import { ErrorBoundaryScreen, FixedFooterBtn, HeaderBar } from "@/components";
+import {
+  ErrorBoundaryScreen,
+  FloatFooterButton,
+  HeaderBar,
+} from "@/components";
 import { Container } from "@/components/ui";
 import { ErrorBoundaryProps } from "expo-router";
 import {
@@ -46,7 +50,7 @@ const SignUpScreen = () => {
           </Container>
         </ScrollView>
       </KeyboardAvoidingView>
-      <FixedFooterBtn label="Продолжить" onPress={() => {}} />
+      <FloatFooterButton label="Продолжить" onPress={() => {}} />
     </>
   );
 };

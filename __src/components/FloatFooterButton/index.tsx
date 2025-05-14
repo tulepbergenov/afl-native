@@ -2,7 +2,7 @@ import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button, Container } from "../ui";
 
-export const FixedFooterBtn = ({
+export const FloatFooterButton = ({
   label,
   onPress,
 }: {

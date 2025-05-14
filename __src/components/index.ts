@@ -1,4 +1,4 @@
 export * from "./ErrorBoundaryScreen";
-export * from "./FixedFooterBtn";
+export * from "./FloatFooterButton";
 export * from "./HeaderBar";
 export * from "./LayoutBackgroundImage";
