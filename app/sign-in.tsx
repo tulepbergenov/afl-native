@@ -1,5 +1,5 @@
 import { Button, Container } from "@/components/ui";
-import { valibotResolver } from "@hookform/resolvers/valibot";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Image } from "expo-image";
 import { Link, useRouter } from "expo-router";
 import { useState } from "react";
@@ -15,20 +15,15 @@ import {
 } from "react-native";
 import { EyeIcon, EyeSlashIcon } from "react-native-heroicons/outline";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import * as v from "valibot";
+import { z } from "zod";
 
-const schema = v.object({
-  number: v.pipe(
-    v.string("Номер телефона обязателен"),
-    v.regex(
-      /^\+?[1-9]\d{1,14}$/,
-      "Пожалуйста, введите правильный номер телефона",
-    ),
-  ),
-  password: v.pipe(
-    v.string("Пароль обязателен"),
-    v.regex(/^.{8,}$/, "Пароль должен быть не менее 8 символов"),
-  ),
+const schema = z.object({
+  email: z
+    .string({ required_error: "Введите электронную почту" })
+    .email("Введите правильный адрес электронной почты"),
+  password: z
+    .string({ required_error: "Введите пароль" })
+    .min(8, "Пароль должен быть не менее 8 символов"),
 });
 
 const SignInScreen = () => {
@@ -37,10 +32,10 @@ const SignInScreen = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const { control, handleSubmit } = useForm<{
-    number: string;
+    email: string;
     password: string;
   }>({
-    resolver: valibotResolver(schema),
+    resolver: zodResolver(schema),
   });
 
   const handleSignIn = handleSubmit((data) => {
@@ -102,26 +97,26 @@ const SignInScreen = () => {
                 opacity: 0.5,
               }}
             >
-              Номер телефона
+              Электронная почта
             </Text>
             <Controller
               control={control}
-              name="number"
+              name="email"
               render={({
                 field: { onChange, onBlur, value },
                 fieldState: { error },
               }) => (
                 <>
                   <TextInput
-                    placeholder="+7..."
+                    placeholder="Введите электронную почту"
                     placeholderTextColor="rgba(255, 255, 255, 0.5)"
-                    keyboardType="phone-pad"
+                    keyboardType="email-address"
                     value={value}
                     onChangeText={onChange}
                     onBlur={onBlur}
-                    autoComplete="tel"
+                    autoComplete="email"
                     importantForAutofill="yes"
-                    textContentType="telephoneNumber"
+                    textContentType="emailAddress"
                     style={{
                       backgroundColor: "#131B21",
                       borderRadius: 8,
@@ -257,6 +252,7 @@ const SignInScreen = () => {
                 lineHeight: 23,
                 fontFamily: "Inter_400Regular",
                 fontWeight: 400,
+                alignSelf: "flex-start",
               }}
             >
               Забыл пароль

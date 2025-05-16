@@ -1,16 +1,31 @@
-import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { HeaderBar } from "@/components";
+import { HEADER_HEIGHT } from "@/shared/constants";
+import { KeyboardAvoidingView, Platform, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const RecoveryPasswordScreen = () => {
-  const { top } = useSafeAreaInsets();
+  const { top, bottom } = useSafeAreaInsets();
 
   return (
-    <View style={{ paddingTop: top }}>
-      <Link href="/sign-in">
-        <Text>RecoveryPasswordScreen</Text>
-      </Link>
-    </View>
+    <>
+      <HeaderBar title="Забыли пароль" />
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={{ flex: 1 }}
+      >
+        <ScrollView
+          style={{
+            paddingTop: top + HEADER_HEIGHT,
+            paddingBottom: bottom,
+          }}
+          showsVerticalScrollIndicator={false}
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{
+            flexGrow: 1,
+          }}
+        ></ScrollView>
+      </KeyboardAvoidingView>
+    </>
   );
 };
 
