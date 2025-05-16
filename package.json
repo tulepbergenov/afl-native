@@ -15,6 +15,8 @@
   "dependencies": {
     "@expo-google-fonts/inter": "^0.3.0",
     "@hookform/resolvers": "^5.0.1",
+    "@tanstack/react-query": "^5.76.1",
+    "axios": "^1.9.0",
     "expo": "^53.0.9",
     "expo-constants": "~17.1.6",
     "expo-font": "~13.3.1",
@@ -32,11 +34,14 @@
     "react-native-safe-area-context": "5.4.0",
     "react-native-screens": "~4.10.0",
     "react-native-svg": "^15.11.2",
-    "zod": "^3.24.4"
+    "sonner-native": "^0.20.0",
+    "zod": "^3.24.4",
+    "react-native-reanimated": "~3.17.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@eslint/js": "^9.24.0",
+    "@tanstack/eslint-plugin-query": "^5.74.7",
     "@types/jest": "^29.5.12",
     "@types/react": "~19.0.10",
     "@types/react-test-renderer": "^18.3.0",

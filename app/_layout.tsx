@@ -1,3 +1,4 @@
+import { Providers } from "@/app/providers";
 import { ErrorBoundaryScreen, LayoutBackgroundImage } from "@/components";
 import { Inter_400Regular } from "@expo-google-fonts/inter/400Regular";
 import { Inter_500Medium } from "@expo-google-fonts/inter/500Medium";
@@ -8,6 +9,8 @@ import { ErrorBoundaryProps, Slot } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
+import "react-native-reanimated";
+import { Toaster } from "sonner-native";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -33,12 +36,13 @@ const RootLayout = () => {
   if (!loaded) return null;
 
   return (
-    <>
+    <Providers>
       <LayoutBackgroundImage>
         <Slot />
+        <Toaster theme="light" />
       </LayoutBackgroundImage>
       <StatusBar style="light" />
-    </>
+    </Providers>
   );
 };
 

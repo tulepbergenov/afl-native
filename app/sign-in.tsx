@@ -15,6 +15,7 @@ import {
 } from "react-native";
 import { EyeIcon, EyeSlashIcon } from "react-native-heroicons/outline";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { toast } from "sonner-native";
 import { z } from "zod";
 
 const schema = z.object({
@@ -40,6 +41,8 @@ const SignInScreen = () => {
 
   const handleSignIn = handleSubmit((data) => {
     console.log(data);
+
+    toast.success("Успешно");
   });
 
   const router = useRouter();

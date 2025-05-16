@@ -1,6 +1,7 @@
 import { Image } from "expo-image";
 import { ReactNode } from "react";
 import { Dimensions, View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const { width, height } = Dimensions.get("window");
 
@@ -10,7 +11,7 @@ export const LayoutBackgroundImage = ({
   children: ReactNode;
 }) => {
   return (
-    <View
+    <GestureHandlerRootView
       style={{
         flex: 1,
         backgroundColor: "#0A090B",
@@ -40,6 +41,6 @@ export const LayoutBackgroundImage = ({
       >
         {children}
       </View>
-    </View>
+    </GestureHandlerRootView>
   );
 };
