@@ -1,10 +1,5 @@
-import {
-  ErrorBoundaryScreen,
-  FloatFooterButton,
-  HeaderBar,
-} from "@/components";
+import { FloatFooterButton, HeaderBar } from "@/components";
 import { Container } from "@/components/ui";
-import { ErrorBoundaryProps } from "expo-router";
 import {
   KeyboardAvoidingView,
   Platform,
@@ -13,10 +8,6 @@ import {
   View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-
-export const ErrorBoundary = (props: ErrorBoundaryProps) => (
-  <ErrorBoundaryScreen {...props} />
-);
 
 const SignUpScreen = () => {
   const { top, bottom } = useSafeAreaInsets();

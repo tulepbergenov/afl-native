@@ -1,10 +1,5 @@
-import { ErrorBoundaryScreen } from "@/components";
-import { ErrorBoundaryProps, Link } from "expo-router";
+import { Link } from "expo-router";
 import { View } from "react-native";
-
-export const ErrorBoundary = (props: ErrorBoundaryProps) => (
-  <ErrorBoundaryScreen {...props} />
-);
 
 const NotFoundScreen = () => {
   return (
