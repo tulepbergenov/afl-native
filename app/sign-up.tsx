@@ -1,5 +1,6 @@
 import { FloatFooterButton, HeaderBar } from "@/components";
 import { Container } from "@/components/ui";
+import { HEADER_HEIGHT } from "@/shared/constants";
 import {
   KeyboardAvoidingView,
   Platform,
@@ -21,7 +22,7 @@ const SignUpScreen = () => {
       >
         <ScrollView
           style={{
-            paddingTop: top + 68,
+            paddingTop: top + HEADER_HEIGHT,
             paddingBottom: bottom,
           }}
           showsVerticalScrollIndicator={false}

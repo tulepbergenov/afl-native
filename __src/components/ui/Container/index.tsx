@@ -1,12 +1,20 @@
 import { ReactNode } from "react";
-import { View } from "react-native";
+import { View, ViewProps } from "react-native";
 
-export const Container = ({ children }: { children: ReactNode }) => {
+export const Container = ({
+  children,
+  style,
+  ...props
+}: { children: ReactNode } & ViewProps) => {
   return (
     <View
-      style={{
-        paddingInline: 16,
-      }}
+      style={[
+        {
+          paddingInline: 16,
+        },
+        style,
+      ]}
+      {...props}
     >
       {children}
     </View>

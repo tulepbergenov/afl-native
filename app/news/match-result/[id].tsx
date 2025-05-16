@@ -1,5 +1,6 @@
 import { HeaderBar } from "@/components";
 import { Container } from "@/components/ui";
+import { HEADER_HEIGHT } from "@/shared/constants";
 import { Image } from "expo-image";
 import { ScrollView, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -12,7 +13,7 @@ const ArticleScreen = () => {
       <HeaderBar title="Новости" />
       <ScrollView
         style={{
-          paddingTop: top + 68,
+          paddingTop: top + HEADER_HEIGHT,
           paddingBottom: bottom,
         }}
         showsVerticalScrollIndicator={false}

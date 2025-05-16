@@ -1,3 +1,4 @@
+import { BaseImpactFeedbackStyle } from "@/shared/libs";
 import { useRouter } from "expo-router";
 import { ReactNode } from "react";
 import { Dimensions, Text, View } from "react-native";
@@ -22,6 +23,12 @@ export const HeaderBar = ({
   const router = useRouter();
   const { top } = useSafeAreaInsets();
 
+  const handleGoBack = () => {
+    BaseImpactFeedbackStyle();
+
+    router.back();
+  };
+
   return (
     <View
       style={{
@@ -44,7 +51,7 @@ export const HeaderBar = ({
           {children}
           {!children && (
             <>
-              <IconButton onPress={() => router.back()}>
+              <IconButton onPress={handleGoBack}>
                 <ChevronLeftIcon color="#fff" size={24} />
               </IconButton>
               <Text

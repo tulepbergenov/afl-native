@@ -1,3 +1,4 @@
+import { BaseImpactFeedbackStyle } from "@/shared/libs";
 import { ReactNode, useMemo } from "react";
 import { Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { styles } from "./Button.style";
@@ -6,6 +7,7 @@ export const Button = ({
   children,
   style,
   type = "primary",
+  onPress,
   ...props
 }: {
   children: ReactNode;
@@ -29,7 +31,16 @@ export const Button = ({
   );
 
   return (
-    <TouchableOpacity activeOpacity={0.6} style={buttonStyles} {...props}>
+    <TouchableOpacity
+      activeOpacity={0.6}
+      style={buttonStyles}
+      onPress={(e) => {
+        BaseImpactFeedbackStyle();
+
+        onPress?.(e);
+      }}
+      {...props}
+    >
       <Text style={textStyles}>{children}</Text>
     </TouchableOpacity>
   );
